@@ -1,2 +1,16 @@
 ---
-# tasks file for ansible-first-role
+
+- name: install packs
+  hosts: dev, test, prod
+  vars:
+    install_state: installed
+
+  tasks:
+    - name: install mariadb
+      yum:
+        name:
+          - telnet
+          - mlocate
+          - bind-utils
+        state: "{{ install_state }}"
+
