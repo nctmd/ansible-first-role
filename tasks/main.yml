@@ -1,7 +1,7 @@
 ---
 
 - name: install packs
-  hosts: dev, test, prod
+  hosts: all
   vars:
     install_state: installed
 
