@@ -1,16 +1,16 @@
 ---
-
-- name: install packs
-  hosts: all
+- name: install additional packages
   vars:
-    install_state: installed
-
-  tasks:
-    - name: install mariadb
-      yum:
-        name:
-          - telnet
-          - mlocate
-          - bind-utils
-        state: "{{ install_state }}"
+          install_state: installed
+  yum:
+    name:
+      - telnet
+      - mlocate
+      - bind-utils
+      - tcpdump
+      - htop
+      - atop
+      - iotop
+      - lsof
+    state: "{{ install_state }}"
 
